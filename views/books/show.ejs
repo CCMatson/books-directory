@@ -7,11 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Books</h1>
+  <h1>Book information</h1>
   <h2>Book #<%= book._id %></h2>
-  <h3><%= book.title %> </h3>
-  <h3><%= book.yearPublished %></h3>
-  <p>Complete: <%= book.completed ? 'Finished' : 'No' %></p>
+  <h3>The book title is <%= book.title %> </h3>
+  <h3>The author is <%= book.author %></h3>
+  <h3>This book was published in the year <%= book.yearPublished %></h3>
+  <p>Completed reading? : <%= book.completed ? 'Yes' : 'No' %></p>
   <a href="/books">Go Back</a>
 </body>
 </html>
