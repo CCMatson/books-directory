@@ -1,8 +1,16 @@
 import { books } from '../data/books-data.js'
+import { Book } from '../models/book.js'
 
 function index(req, res){
+  Book.find({})
+  .then(books => {
   res.render('books/index', {
     books: books
+    })
+  })
+  .catch(error => { // If there's an error, console.log it and redirect back home!
+    console.log(error)
+    res.redirect('/')
   })
 }
 
@@ -12,7 +20,7 @@ function newBook(req, res){
 
 function create(req, res){
   req.body.done = false
-  books.create(req.body)
+  Book.create(req.body)
   .then(book => {
     res.redirect('/books')
   })
@@ -23,7 +31,7 @@ function create(req, res){
 }
 
 function show(req, res) {
-  books.findById(req.params.id)
+  Book.findById(req.params.id)
   .then(book => {
     res.render('books/show', {
       book: book
@@ -36,7 +44,7 @@ function show(req, res) {
 }
 
 function deleteBook(req, res){
-  books.findByIdAndDelete(req.params.id)
+  Book.findByIdAndDelete(req.params.id)
   .then(book => {
     res.redirect('/books')
   })

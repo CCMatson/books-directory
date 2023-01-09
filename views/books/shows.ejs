@@ -10,7 +10,8 @@
   <h1>Books</h1>
   <h2>Book #<%= book._id %></h2>
   <h3><%= book.title %> </h3>
-  <p>Complete: <%= book.completed ? 'Finished' : 'No' %></p>
+  <h3><%= book.yearPublished %></h3>
+  <p>Complete: <%= book.completed ? 'Finished' : 'No' </p>
   <a href="/books">Go Back</a>
 </body>
 </html>
