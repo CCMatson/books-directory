@@ -1,8 +1,10 @@
+import "dotenv/config.js"
 import createError from 'http-errors'
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import logger from 'morgan'
+import './config/database.js'
 import methodOverride from 'method-override'
 
 // import routers
